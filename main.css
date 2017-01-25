@@ -1,0 +1,54 @@
+.navbar{
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+	align-items: center;
+}
+.icon{
+	opacity: 0.5;
+
+}
+.icon:hover{
+	opacity: 1;
+}
+
+
+.jumbo{
+	padding-top: 2em;
+	background: #ededed;
+}
+.jumbotron{
+	text-align: center;
+
+	color: #ffffff;
+	text-shadow: 1.25px 1.25px 1.25px #000000;
+	background-image: url("images/card2.jpg");
+	background-size: cover;
+}
+.about-me{
+	padding-top: 2em;
+	padding-bottom: 2em;
+}
+.frontpage-links{
+	padding-bottom: 2em;
+	background: #f2f2f2;
+}
+.double p{
+	text-align: center;
+}
+hr{
+	border-width: 2px;
+}
+h1{
+	text-align: center;
+	font-size: 4em;
+}
+p{
+	font-size: 1.5em;
+}
+
+.btn{
+	float: bottom;
+}
+btn{
+	float: bottom;
+}
