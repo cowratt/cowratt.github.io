@@ -20,14 +20,11 @@ color bg = #C7D5E8;
 boolean sizechange = false;
 String sizetext = "off";
 
-function doResize() {
-    size($(window).width(), $(window).outerHeight());
-}
-$(window).resize(doResize);
+
 
 //---------------------- Setting up canvas and canvas-dependant variables
 void setup(){
-    doResize();
+    size(500,500);
     background(bg);
     strokeWeight(1);
     textSize(15);
