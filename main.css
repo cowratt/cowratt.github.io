@@ -32,6 +32,9 @@
 	padding-bottom: 2em;
 	background: #f2f2f2;
 }
+.gallery{
+	padding-top: 2em;
+}
 .double p{
 	text-align: center;
 }
@@ -51,4 +54,7 @@ p{
 }
 btn{
 	float: bottom;
+}
+.modal-lg {
+     width: 60%;
 }
