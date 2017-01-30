@@ -20,21 +20,20 @@ color: #fed136;
 	opacity: 1;
 }
 
-
-.header-frontpage{
-	
-
+body{
+	background-color: #f9f9f9;
 }
+
 header{
 	padding-top: 10em;
 	background: #ededed;
-	background-image: url("images/card2.jpg");
+	background-image: url("images/card2_4k_2.jpg");
 	background-repeat:no-repeat;
 	background-attachment: scroll;
 	text-align: center;
 	padding-bottom: 8em;
 	color: #ffffff;
-	text-shadow: 1.25px 1.25px 1.25px #000000;
+	//text-shadow: 1.25px 1.25px 1.25px #000000;
 	background-size: cover;
 }
 .about-me{
@@ -45,7 +44,7 @@ header{
 }
 .frontpage-links{
 	padding-bottom: 2em;
-	background: #f2f2f2;
+	background: #ededed;
 }
 .gallery{
 	padding-top: 2em;
