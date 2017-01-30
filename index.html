@@ -20,6 +20,7 @@ And that's it. You really shouldn't be impressed, this took like a day.
 
     <!-- Custom styles for this template -->
     <link href="main.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
 </head>
 <body>
 	<nav class="navbar navbar-default navbar-static-top">
@@ -31,13 +32,13 @@ And that's it. You really shouldn't be impressed, this took like a day.
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 		      </button>
-		      <a class="navbar-brand">Conrad Menchine</a>
+		      <a href="index.html" class="navbar-brand">Conrad Menchine</a>
    		 </div>
 
    		  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
       <ul class="nav navbar-nav">
-        <li class="active"><a href="index.html">Home <span class="sr-only">(current)</span></a></li>
+        
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resume <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -51,8 +52,8 @@ And that's it. You really shouldn't be impressed, this took like a day.
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="https://www.youtube.com/c/ConradMenchine" target="_blank"><img class="icon" alt="YouTube" src="images/yt-light.png" height="20px"></a></li>
-        <li><a href="https://github.com/cowratt" target="_blank"><img class="icon" alt="GitHub" src="images/github-white.png" height="25px"></a></li>
+        <li class="icon"><a href="https://www.youtube.com/c/ConradMenchine" target="_blank"><img  alt="YouTube" src="images/yt-light.png" height="20px"></a></li>
+        <li class="icon"><a href="https://github.com/cowratt" target="_blank"><img alt="GitHub" src="images/github-white.png" height="25px"></a></li>
       </ul>
     </div>
 		</div>
@@ -60,26 +61,28 @@ And that's it. You really shouldn't be impressed, this took like a day.
 
 
 
-	<section class="jumbo">
+	<header>
 		<div class="container">
-			<div class="jumbotron">
+			<div class="header-frontpage">
 				<h1>Conrad Menchine</h1>
+        <br> <br>
 				<h2>Programmer and Graphic Artist</h2>
 				<br>
 				<p>If I had a logo, I'd put it here, but I'm still in the process of learning Adobe Illustrator</p>
 			</div>
 		</div>
-	</section>
+	</header>
 
 <section class="about-me">
     <div class="container">
     <div class="row">
-      <div class="col-md-7">
+    <div class="col-md-5 col-md-offset-0 col-md-push-7 col-xs-8 col-xs-offset-2 col-xs-push-0" >
+        <img src="images/me.jpg" class="img-responsive img-rounded">
+        </div>
+      <div class="col-md-7 col-xs-12 col-md-pull-5 col-xs-pull-0">
         <p>I&#39;m a student persuing a degree in computer science or computer engineering. I&#39;ve had an interest in art my whole life, but my lack of drawing skill has driven me more towards digital and musical arts. When I was young, one of my YouTube videos got fairly popular, which further drew me to the idea of working on digital mediums. I have trouble doing nothing, so in my free time, I tend to immerse myself in projects (like this website). I have experience programming for desktop, web, and mobile, as well as producing graphic art, motion graphics, and 3D solids. </p>
       </div>
-      <div class="col-md-5">
-        <img src="images/me.jpg" class="img-responsive">
-        </div>
+      
     </div>
     </div>
   </section>

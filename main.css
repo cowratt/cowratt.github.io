@@ -1,7 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Seaweed+Script');
 .navbar{
 	padding-bottom: 0px;
 	margin-bottom: 0px;
 	align-items: center;
+}
+.navbar .navbar-brand{
+	 color: #E7AF55;
+	 font-family: 'Seaweed Script', "Helvetica Neue", Helvetica, Arial, cursive;
+	 font-size: 2em;
+}
+.navbar .navbar-brand:hover{
+color: #fed136;
 }
 .icon{
 	opacity: 0.5;
@@ -12,21 +21,27 @@
 }
 
 
-.jumbo{
-	padding-top: 2em;
-	background: #ededed;
-}
-.jumbotron{
-	text-align: center;
+.header-frontpage{
+	
 
+}
+header{
+	padding-top: 10em;
+	background: #ededed;
+	background-image: url("images/card2.jpg");
+	background-repeat:no-repeat;
+	background-attachment: scroll;
+	text-align: center;
+	padding-bottom: 8em;
 	color: #ffffff;
 	text-shadow: 1.25px 1.25px 1.25px #000000;
-	background-image: url("images/card2.jpg");
 	background-size: cover;
 }
 .about-me{
 	padding-top: 2em;
 	padding-bottom: 2em;
+
+
 }
 .frontpage-links{
 	padding-bottom: 2em;
@@ -45,10 +60,13 @@ h1{
 	text-align: center;
 	font-size: 4em;
 }
+h2{
+	text-align: center;
+}
+
 p{
 	font-size: 1.5em;
 }
-
 .btn{
 	float: bottom;
 }

@@ -1,21 +1,28 @@
 <!DOCTYPE html>
+<!-- 
+Well aren't you a sly one, inspecting the source on my website!
+It was so cool that you couldn't handle it, right?
+well, It was built with the Bootstrap library and is hosted on github
+...
+And that's it. You really shouldn't be impressed, this took like a day.
+-->
 <html>
 <head>
-	<title>What A Meme!</title>
+
+
+  <title>Resume</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/sandstone/bootstrap.min.css" rel="stylesheet" integrity="sha384-QqZs0aSOGFan3GWVdP4PyCBp6icaF/4n8Q+wsmZUTiiVIqE4r4tFYcb8Osf+8y45" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/sandstone/bootstrap.min.css" rel="stylesheet" integrity="sha384-G3G7OsJCbOk1USkOY4RfeX1z27YaWrZ1YuaQ5tbuawed9IoreRDpWpTkZLXQfPm3" crossorigin="anonymous">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../Bootstrap/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="main.css" rel="stylesheet">
 </head>
-
 <body>
-
-<nav class="navbar navbar-default navbar-static-top">
+  <nav class="navbar navbar-default navbar-static-top">
     <div class="container">
       <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -24,72 +31,73 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html">Conrad Menchine</a>
+          <a class="navbar-brand">Conrad Menchine</a>
        </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
       <ul class="nav navbar-nav">
         <li><a href="index.html">Home <span class="sr-only">(current)</span></a></li>
-        <li><a href="about.html">About</a></li>
         <li class="dropdown active">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resume <span class="caret"></span></a>
           <ul class="dropdown-menu">
-
             <li><a href="resume.html">Overview</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="school.html">Academic achievements</a></li>
             <li><a href="cs.html">Computer science</a></li>
             <li><a href="art.html">Graphic arts</a></li>
           </ul>
+          <li><a href="gallery.html">Gallery</a></li>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="https://www.youtube.com/c/ConradMenchine" target="_blank"><img class="icon" alt="YouTube" src="yt-light.png" height="20px"></a></li>
-        <li><a href="https://github.com/cowratt" target="_blank"><img class="icon" alt="GitHub" src="github-white.png" height="25px"></a></li>
+        <li class="icon"><a href="https://www.youtube.com/c/ConradMenchine" target="_blank"><img  alt="YouTube" src="images/yt-light.png" height="20px"></a></li>
+        <li class="icon"><a href="https://github.com/cowratt" target="_blank"><img alt="GitHub" src="images/github-white.png" height="25px"></a></li>
       </ul>
     </div>
     </div>
   </nav>
 
+<section class="resume">
+  <div class="container">
+    <h1>Conrad Menchine</h1>
+    <h2>Programmer and Graphic Artist</h2>
+    <b>skills</b>
+
+    <ul>
+      <li> <p><b>Computer science</b> experience programming in C++, Java and Python, developing Android applications, and using the Processing library. Version control using GitHub, and deconstructing and translating </p></li>
+    </ul>
+
+  </div>
+</section>
 
 
-	
-	<div class="tri">
-		<div class="container">
-    <h1>So basiaclly I'm a big deal</h1>
-    <p>Listen to me talking about how cool I am for a bit then read my justifications that are just links to other pages</p>
-    <div class="row">
-        <div class="col-md-4 text-center">
-          <h1>I can add.</h1>
-          <p>And do calculus and physics and I have a high SAT score sort of.</p>
-          <span class="bottomaligned"> <a class="btn btn-primary" href="school.html" role="button">Let my reiterate that</a> </span>
+  <section class="resume-links">
+  <div class="double">
+    <div class="container">
+      <div class="row">
+        
+        <div class="col-md-6 text-center">
+          <h1>programming</h1>
+          <p>computer science </p>
+          <a class="btn btn-primary" href="cs.html" role="button">programming</a>
         </div>
-        <div class="col-md-4 text-center">
-          <h1>I can code.</h1>
-          <p>Python, Java, HTML, CSS and the Processing and Android libraries. I'm proud of this one so I put it in the middle.</p>
-          <a class="btn btn-primary" href="cs.html" role="button">Get hype.</a>
+        <div class="col-md-6 text-center">
+          <h1>art</h1>
+          <p>more graphic design</p>
+          <a class="btn btn-primary" href="art.html" role="button">art</a>
         </div>
-        <div class="col-md-4 text-center">
-          <h1>I can do art</h1>
-          <p>Click for essentially a large gallery of digital art with me self-congratulating on the side</p>
-          <a class="btn btn-primary" href="art.html" role="button">Art it up.</a>
-        </div>
-
       </div>
-      <p>I've worked for one guy and he paid me sort of, though it was totally under the table, but shh about that, just pretend it was a legit job. I'm totally legit. Hire me.</p>
-		</div>
-	</div>
+    </div>
+  </div>
+</section>
 
 
-
-
-	<!-- Javascript and shit -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Javascript and shit -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../Bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../Bootstrap/assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/js/ie10-viewport-bug-workaround.js"></script>
 </body>
 </html>
