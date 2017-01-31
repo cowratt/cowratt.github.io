@@ -29,14 +29,15 @@ void setup(){
     strokeWeight(1);
     textSize(15);
     frameRate(60);
+    colorMode(HSB, 360, 100, 100);
     
     balls = new ArrayList<Orbital>();
-    balls.add(new Orbital(color(random(255), random(255), random(255)), 1));
+    balls.add(new Orbital(color(random(360), random(70,100), random(80,100)), 1));
     ogb = (Orbital) balls.get(0);
 
     
     for(int i = 0;i < 4; i++){
-        balls.add(new Orbital(color(random(255), random(255), random(255)), 0.9));
+        balls.add(new Orbital(color(random(360), random(70,90), random(70,90)), 0.9));
     }
 }
 
@@ -49,6 +50,16 @@ void draw(){
 program();
 }
 
+void keyPressed(){
+        for(int i = 0;i < 5; i++){
+        balls.remove(0);
+    }
+    balls.add(new Orbital(color(random(360), random(70,100), random(80,100)), 1));
+    ogb = (Orbital) balls.get(0);
+     for(int i = 0;i < 4; i++){
+        balls.add(new Orbital(color(random(360), random(70,100), random(80,100)), 0.9));
+    }   
+}
 
 void program(){
     textSize(min(width,height)/26);
