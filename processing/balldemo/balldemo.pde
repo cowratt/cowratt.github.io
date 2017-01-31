@@ -31,8 +31,7 @@ void setup(){
     textSize(15);
     frameRate(60);
     colorMode(HSB, 360, 100, 100);
-    myResize();
-    window.addEventListener("resize", myResize, false);
+
     balls = new ArrayList<Orbital>();
     balls.add(new Orbital(color(random(360), random(70,100), random(80,100)), 1));
     ogb = (Orbital) balls.get(0);
@@ -41,6 +40,8 @@ void setup(){
     for(int i = 0;i < 4; i++){
         balls.add(new Orbital(color(random(360), random(70,90), random(70,90)), 0.9));
     }
+        myResize();
+    window.addEventListener("resize", myResize, false);
 }
 
 
