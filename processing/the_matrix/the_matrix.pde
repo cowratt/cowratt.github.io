@@ -42,11 +42,16 @@ class noot{
     }
     void comeDown(){
         Y+= random(3,20);
-        char c = (char) int(random(33, 127));
-        text(c,X, Y);
+
+        text(randomchar(),X, Y);
         if(Y > height){
             Y = 0;
             X = random(width);
         }
     }
+}
+String randomchar(){
+    String s = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789~`!@#$%^&*()_+-={}[]:;\'<>?,./|\\";
+    String x = "" + s.charAt(68);
+    return x;
 }
