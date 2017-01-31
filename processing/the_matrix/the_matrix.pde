@@ -42,7 +42,8 @@ class noot{
     }
     void comeDown(){
         Y+= random(3,20);
-        text((char)int(random(33,96)),X, Y);
+        char letter = (random(33,96);
+        text(letter,X, Y);
         if(Y > height){
             Y = 0;
             X = random(width);
