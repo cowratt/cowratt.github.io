@@ -142,7 +142,5 @@ btn{
 pre{
 	overflow: auto;
 	background: #282828;
-}
-code-example{
-	max-height: 15em;
+	max-height: 25em;
 }

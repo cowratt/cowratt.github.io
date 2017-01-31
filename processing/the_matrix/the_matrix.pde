@@ -1,15 +1,13 @@
-ArrayList<noot> matrix = new ArrayList<noot>();
+ArrayList<fallingCharacter> matrix = new ArrayList<fallingCharacter>();
 void setup(){
     textSize(30);
     size(500,500);
     for(int i = 0; i < width/20; i++){
-        matrix.add(new noot());
+        matrix.add(new fallingCharacter());
     }
     fill(#0CAA15);
     rect(-1, -1, width+1, height+1);
     frameRate(20);
-    
-    
         myResize();
         window.addEventListener("resize", myResize, false);
         
@@ -28,15 +26,15 @@ void draw(){
     fill(#0F0F0F, 10);
     rect(-1, -1, width+1, height+1);
     fill(#0CAA15);
-    for (noot i : matrix){
+    for (fallingCharacter i : matrix){
         i.comeDown();        
     }
 }
 
-class noot{
+class fallingCharacter{
     float X = 0;
     float Y = 0;
-    noot(){
+    fallingCharacter(){
         Y = random(height);
         X = random(width);
     }

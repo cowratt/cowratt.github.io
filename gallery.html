@@ -24,7 +24,7 @@ well this almost passes as art...
   <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
   <script type="text/javascript" src="processing/processing.js"></script>
   <script src="processing/highlight/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
+  <script>hljs.initHighlightingOnLoad();</script>
 
 
 </head>
@@ -48,39 +48,39 @@ well this almost passes as art...
           <li><a href="resume.html">Resume</a></li>
           <li class="active"><a href="gallery.html">Gallery</a></li>
 
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="contact.html">Contact</a></li>
-        <li class="icon"><a href="https://www.youtube.com/c/ConradMenchine" target="_blank"><img  alt="YouTube" src="images/yt-light.png" height="20px"></a></li>
-        <li class="icon"><a href="https://github.com/cowratt" target="_blank"><img alt="GitHub" src="images/github-white.png" height="25px"></a></li>
-      </ul>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="contact.html">Contact</a></li>
+          <li class="icon"><a href="https://www.youtube.com/c/ConradMenchine" target="_blank"><img  alt="YouTube" src="images/yt-light.png" height="20px"></a></li>
+          <li class="icon"><a href="https://github.com/cowratt" target="_blank"><img alt="GitHub" src="images/github-white.png" height="25px"></a></li>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
 
 
 
 
 
-<section class="gallery-head">
-  <div class="container">
-    <div class="row">
-    <h1>Gallery and art showcase</h1>
-    <h2><small><center>Below, you'll find examples of the work I've been touting on the rest of this website.</center></small></h2>
-    <br>
-      <div class="col-md-8 col-md-offset-2">
-        <div class="embed-responsive embed-responsive-16by9">
-          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/eYxYEEAgwiI" frameborder="0" allowfullscreen></iframe>
+  <section class="gallery-head">
+    <div class="container">
+      <div class="row">
+        <h1>Gallery and art showcase</h1>
+        <h2><small><center>Below, you'll find examples of the work I've been touting on the rest of this website.</center></small></h2>
+        <br>
+        <div class="col-md-8 col-md-offset-2">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/eYxYEEAgwiI" frameborder="0" allowfullscreen></iframe>
+          </div>
         </div>
-      </div>
- 
+
       </div>
     </div>
   </div>
-  </section>
+</section>
 
-  <section class="gallery">
+<section class="gallery">
   <div class="container">
    <div class="row">
      <h1>Coalescence/The Knight</h1>
@@ -192,32 +192,80 @@ well this almost passes as art...
     <h2><small><center>C++, Java, and Python.</center></small></h2>
     <p>I've been programming for about four years now, starting with Python, and moving towards C++ and Java because I wanted to expand my knowledge. Below are some screenshots, as well as some live interactive code. There are about a thousand things that can go wrong when rendering the code, so I reccomend a desktop Chrome browser for optimal viewing.</p>
     <div class="row">
-    <h3><center>Java/Processing</center></h3>
+      <h3><center>Java/Processing</center></h3>
       <div class="col-lg-6">
-      <center><canvas id="canvas" data-processing-sources="processing/balldemo/balldemo.pde">If you're reading this, your browser doesn't support processing.js</canvas> </center>
-      <p>circley demo</p>
-    </div>
-    <div class="col-lg-6">
+        <center><canvas id="canvas" data-processing-sources="processing/balldemo/balldemo.pde">If you're reading this, your browser doesn't support processing.js</canvas> </center>
+        <p>circley demo</p>
+      </div>
+      <div class="col-lg-6">
         <center><canvas id="canvas" data-processing-sources="processing/the_matrix/the_matrix.pde">If you're reading this, your browser doesn't support processing.js</canvas> </center>
-      <p>matrix example</p>
+        <p>matrix example</p>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="code-example"><pre><code class="html">
+    <div class="row">
+      <div class="col-md-6">
+      </div>
+      <div class="col-md-6">
+       <pre><code class="processing">
+  ArrayList<fallingCharacter> matrix = new ArrayList<fallingCharacter>();
+  void setup(){
+      textSize(30);
+      size(500,500);
+      for(int i = 0; i < width/20; i++){
+          matrix.add(new fallingCharacter());
+      }
+      fill(#0CAA15);
+      rect(-1, -1, width+1, height+1);
+      frameRate(20);
+          myResize();
+          window.addEventListener("resize", myResize, false);
           
-          void setup(){
-        textSize(30);
-        size(500,500);
-        for(int i = 0; i < width/20; i++){
-            matrix.add(new noot());
-        }
-        fill(#0CAA15);
-        rect(-1, -1, width+1, height+1);
-        frameRate(20);
-        }
-        </code></pre></div>
-  </div>
-  </div>
+  }
+  void myResize(){
+      if(window.innerWidth > 1200){ resizeCanvas(500,500); return;}
+      if(window.innerWidth > 600){ resizeCanvas(450,450); return;}
+      else resizeCanvas(300,300);
+  }
+  void resizeCanvas(int newWidth, int newHeight) {
+    size(newWidth, newHeight);
+    redraw();  // not needed if frameRate is high enough
+  }
+
+  void draw(){
+      fill(#0F0F0F, 10);
+      rect(-1, -1, width+1, height+1);
+      fill(#0CAA15);
+      for (fallingCharacter i : matrix){
+          i.comeDown();        
+      }
+  }
+
+  class fallingCharacter{
+      float X = 0;
+      float Y = 0;
+      fallingCharacter(){
+          Y = random(height);
+          X = random(width);
+      }
+      void comeDown(){
+          Y+= random(3,20);
+
+          text(randomchar(),X, Y);
+          if(Y > height){
+              Y = 0;
+              X = random(width);
+          }
+      }
+  }
+  String randomchar(){
+      String s = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789~`!@#$%^&*()_+-={}[]:;\'<>?,./|\\";
+      String x = "" + s.charAt(int(random(68)));
+      return x;
+  }
+       </code></pre>
+      </div>
+   </div>
+ </div>
 </section>
 <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
