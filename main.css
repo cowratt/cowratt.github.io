@@ -139,3 +139,10 @@ p{
 btn{
 	float: bottom;
 }
+pre{
+	overflow: auto;
+	background: #282828;
+}
+code-example{
+	max-height: 15em;
+}

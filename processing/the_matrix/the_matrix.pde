@@ -52,6 +52,6 @@ class noot{
 }
 String randomchar(){
     String s = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789~`!@#$%^&*()_+-={}[]:;\'<>?,./|\\";
-    String x = "" + s.charAt(68);
+    String x = "" + s.charAt(int(random(68)));
     return x;
 }
