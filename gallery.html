@@ -25,15 +25,11 @@ well this almost passes as art...
 <script type="text/javascript">
         function resize_canvas(){
             canvas = document.getElementById("canvas");
-            if (canvas.width  < window.innerWidth)
-            {
-                canvas.width  = window.innerWidth;
-            }
+            var style = window.getComputedStyle(canvas, null);
+            var newWidth = style.getPropertyValue("width");
 
-            if (canvas.height < window.innerHeight)
-            {
-                canvas.height = window.innerHeight;
-            }
+                canvas.width  = newWidth;
+                canvas.height = newWidth;
         }
     </script>
 
@@ -103,7 +99,7 @@ well this almost passes as art...
     <div class="col-md-4 col-xs-6">
       <!-- Button trigger modal -->
       <button type="button" class="triggerclass" data-toggle="modal" data-target="#birdModal">
-        <img class="img-responsive img-rounded" src="images/knight-ico/bird.png" alt="bird">
+        <img class="img-responsive img-rounded" src="images/knight-ico/bird.jpg" alt="bird">
           <p>a bird </p>
       </button>           
       <!-- Modal -->
@@ -127,7 +123,7 @@ well this almost passes as art...
     <div class="col-md-4 col-xs-6">
       <!-- Button trigger modal -->
       <button type="button" class="triggerclass" data-toggle="modal" data-target="#landscapeModal">
-        <img class="img-responsive img-rounded" src="images/knight-ico/landscape.png" alt="landscape">
+        <img class="img-responsive img-rounded" src="images/knight-ico/landscape.jpg" alt="landscape">
           <p>a landscape</p>
       </button>           
       <!-- Modal -->
@@ -150,7 +146,7 @@ well this almost passes as art...
     <div class="col-md-4 col-xs-6">
       <!-- Button trigger modal -->
       <button type="button" class="triggerclass" data-toggle="modal" data-target="#handsModal">
-        <img class="img-responsive img-rounded" src="images/knight-ico/hands.png" alt="hands">
+        <img class="img-responsive img-rounded" src="images/knight-ico/hands.jpg" alt="hands">
           <p>a hands </p>
       </button>           
       <!-- Modal -->
@@ -173,7 +169,7 @@ well this almost passes as art...
     <div class="col-md-4 col-xs-6">
       <!-- Button trigger modal -->
       <button type="button" class="triggerclass" data-toggle="modal" data-target="#mirrorModal">
-        <img class="img-responsive img-rounded" src="images/knight-ico/mirror.png" alt="mirror">
+        <img class="img-responsive img-rounded" src="images/knight-ico/mirror.jpg" alt="mirror">
           <p>a mirror</p>
       </button>           
       <!-- Modal -->
