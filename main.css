@@ -46,15 +46,22 @@ header{
 .modal-lg {
      width: 60%;
 }
-
-@media (max-width: 991px) {
-		.modal-lg {
-     width: 95%;
+canvas{
+	width: 500px;
 }
-  header{
-  	padding-top: 3em;
-  	padding-bottom: 3em;
-  }
+@media (max-width: 991px) {
+	.modal-lg {
+		width: 95%;
+
+
+	}
+	header{
+		padding-top: 3em;
+		padding-bottom: 3em;
+	}
+	canvas{
+		width: 300px;
+	}
 }
 
 @media (max-width: 768px) {
