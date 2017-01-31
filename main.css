@@ -52,18 +52,19 @@ header{
      width: 95%;
 }
   header{
-  	padding-top: 2em;
-  	padding-bottom: 2em;
+  	padding-top: 3em;
+  	padding-bottom: 3em;
   }
 }
 
 @media (max-width: 768px) {
 
 body{
-	font-size: 2vw;
+	font-size: 2.5vw;
 }
 h2{
-	font-size: 4vw
+	font-size: 3vw
+	font-weight: bold;
 }
 }
 
@@ -98,7 +99,7 @@ padding-bottom: 4em;
 
 }
 .gallery-head{
-padding-top: 2em;
+padding-top: 1em;
 padding-bottom: 2em;
 }
 .gallery{
