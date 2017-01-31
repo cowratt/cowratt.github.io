@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <!-- 
-Well aren't you a sly one, inspecting the source on my website!
-It was so cool that you couldn't handle it, right?
-well, It was built with the Bootstrap library and is hosted on github
-...
-And that's it. You really shouldn't be impressed, this took like a day.
+
+
+Ah yes, I'm quite professional dont'cha know?
+
+
 -->
 <html>
 <head>
@@ -12,7 +12,7 @@ And that's it. You really shouldn't be impressed, this took like a day.
 
   <title>Resume</title>
 
-    <!-- Bootstrap core CSS -->
+   <!-- Bootstrap core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/sandstone/bootstrap.min.css" rel="stylesheet" integrity="sha384-G3G7OsJCbOk1USkOY4RfeX1z27YaWrZ1YuaQ5tbuawed9IoreRDpWpTkZLXQfPm3" crossorigin="anonymous">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
@@ -20,6 +20,7 @@ And that's it. You really shouldn't be impressed, this took like a day.
 
     <!-- Custom styles for this template -->
     <link href="main.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
 </head>
 <body>
   <nav class="navbar navbar-default navbar-static-top">
@@ -31,21 +32,14 @@ And that's it. You really shouldn't be impressed, this took like a day.
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand">Conrad Menchine</a>
+          <a href="index.html" class="navbar-brand">Conrad Menchine</a>
        </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
       <ul class="nav navbar-nav">
-        <li><a href="index.html">Home <span class="sr-only">(current)</span></a></li>
-        <li class="dropdown active">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resume <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="resume.html">Overview</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="cs.html">Computer science</a></li>
-            <li><a href="art.html">Graphic arts</a></li>
-          </ul>
+        
+          <li class="active"><a href="resume.html">Resume</a></li>
           <li><a href="gallery.html">Gallery</a></li>
         </li>
       </ul>
@@ -58,39 +52,49 @@ And that's it. You really shouldn't be impressed, this took like a day.
     </div>
   </nav>
 
-<section class="resume">
-  <div class="container">
+<section class="resume-header">  
+
+    <div class="container">
     <h1>Conrad Menchine</h1>
-    <h2>Programmer and Graphic Artist</h2>
-    <b>skills</b>
-
-    <ul>
-      <li> <p><b>Computer science</b> experience programming in C++, Java and Python, developing Android applications, and using the Processing library. Version control using GitHub, and deconstructing and translating </p></li>
-    </ul>
-
-  </div>
+        <h2><center>Programmer and Graphic Artist <small>(still)</small></center></h2>
+        <br>
+        <p>I'm a student currently enrolled in Santa Cruz High School, and taking programming courses at Cabrillo College. I've worked with local Santa Cruz companies and can provide references upon request.</p>
+        </div>
 </section>
 
 
-  <section class="resume-links">
+<section class="resume">
+  <div class="container">
+        <h3><b>skills</b></h3>
+    <ul>
+      <li> <p><b>Computer programming</b> experience programming in C++, Java and Python, developing Android applications, and using the Processing library. Version control using GitHub, and deconstructing and translating code from other languages </p></li>
+      <li><p><b>3D modeling and compositing</b> with Blender and Maya, as well as experience working with 3D printers</p></li>
+      <li><p><b>Graphic design</b> using Adobe Photoshop, Gimp, and Adobe Illustrator</p></li>
+      <li><p><b>Video production</b> and <b>motion graphics</b> experience, using Adobe After Effects, Premiere, and Sony Vegas</p></li>
+      <li><p><b>Web design</b> knowledge of CSS, HTML, and some JavaScript, as well as working with third party frameworks such as bootstrap.</p></li>
+    </ul>
+<br>
+  </div>
+</section>
+
+<div class="spacer"> </div>
+  <footer class="resume-links">
   <div class="double">
     <div class="container">
       <div class="row">
         
-        <div class="col-md-6 text-center">
-          <h1>programming</h1>
-          <p>computer science </p>
-          <a class="btn btn-primary" href="cs.html" role="button">programming</a>
+        <div class="col-xs-6 text-center">
+          <h1>Impressed?</h1>
+          <a class="btn btn-primary" href="contact.html" role="button">Contact Me!</a>
         </div>
-        <div class="col-md-6 text-center">
-          <h1>art</h1>
-          <p>more graphic design</p>
-          <a class="btn btn-primary" href="art.html" role="button">art</a>
+        <div class="col-xs-6 text-center">
+          <h1>Want examples?</h1>
+          <a class="btn btn-primary" href="gallery.html" role="button">VIEW GALLERY</a>
         </div>
       </div>
     </div>
   </div>
-</section>
+</footer>
 
 
   <!-- Javascript and shit -->

@@ -20,11 +20,18 @@ color: #fed136;
 	opacity: 1;
 }
 
+html{
+
+	height: 100vh;
+}
+
 body{
 	background-color: #f9f9f9;
+	height: 100vh;
 }
 
 header{
+	max-height: : 100vw;
 	padding-top: 10em;
 	background: #ededed;
 	background-image: url("images/card2_4k_2.jpg");
@@ -36,6 +43,31 @@ header{
 	//text-shadow: 1.25px 1.25px 1.25px #000000;
 	background-size: cover;
 }
+.modal-lg {
+     width: 60%;
+}
+
+@media (max-width: 991px) {
+		.modal-lg {
+     width: 95%;
+}
+  header{
+  	padding-top: 2em;
+  	padding-bottom: 2em;
+  }
+}
+
+@media (max-width: 768px) {
+
+body{
+	font-size: 2vw;
+}
+h2{
+	font-size: 4vw
+}
+}
+
+
 .about-me{
 	padding-top: 2em;
 	padding-bottom: 2em;
@@ -43,12 +75,47 @@ header{
 
 }
 .frontpage-links{
+
 	padding-bottom: 2em;
 	background: #ededed;
 }
+
+.resume-header{
+	background: #ededed;
+}
+.spacer{
+	min-height: calc(100% - 871px);
+
+}
+.resume-links{
+position: relative;
+padding-top: 2em;
+padding-bottom: 4em;
+    bottom: 0;
+    width: 100%;
+	background-color: #424242;
+	color: #f4f4f4;
+
+}
+.gallery-head{
+padding-top: 2em;
+padding-bottom: 2em;
+}
 .gallery{
+	background-color: #424242;
+	color: #f4f4f4;
 	padding-top: 2em;
 }
+.triggerclass{
+	border-color: transparent;
+	outline: none;
+	background-color: #424242;
+	color: #f4f4f4;
+}
+.modal-content{
+	background-color:#bcbcbc;
+}
+
 .double p{
 	text-align: center;
 }
@@ -57,10 +124,7 @@ hr{
 }
 h1{
 	text-align: center;
-	font-size: 4em;
-}
-h2{
-	text-align: center;
+	font-size: 3.5em;
 }
 
 p{
@@ -71,7 +135,4 @@ p{
 }
 btn{
 	float: bottom;
-}
-.modal-lg {
-     width: 60%;
 }
