@@ -25,6 +25,7 @@ String sizetext = "off";
 //---------------------- Setting up canvas and canvas-dependant variables
 void setup(){
     size(500,500);
+    myResize();
     background(bg);
     strokeWeight(1);
     textSize(15);
@@ -85,8 +86,9 @@ void program(){
 
 }
 void myResize(){
-    if(window.innerWidth < 700) resizeCanvas(300,300);
-    else resizeCanvas(500,500);
+    if(window.innerWidth > 1200){ resizeCanvas(500,500); return;}
+    if(window.innerWidth > 600){ resizeCanvas(450,450); return;}
+    else resizeCanvas(300,300);
 }
 void resizeCanvas(int newWidth, int newHeight) {
   size(newWidth, newHeight);
