@@ -25,12 +25,13 @@ String sizetext = "off";
 //---------------------- Setting up canvas and canvas-dependant variables
 void setup(){
     size(500,500);
-    myResize();
+    
     background(bg);
     strokeWeight(1);
     textSize(15);
     frameRate(60);
     colorMode(HSB, 360, 100, 100);
+    myResize();
     window.addEventListener("resize", myResize, false);
     balls = new ArrayList<Orbital>();
     balls.add(new Orbital(color(random(360), random(70,100), random(80,100)), 1));
