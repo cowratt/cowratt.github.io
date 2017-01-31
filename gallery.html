@@ -22,16 +22,7 @@ well this almost passes as art...
   <link href="main.css" rel="stylesheet">
   <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
   <script type="text/javascript" src="balldemo/processing.js"></script>
-<script type="text/javascript">
-        function resize_canvas(){
-            canvas = document.getElementById("canvas");
-            var style = window.getComputedStyle(canvas, null);
-            var newWidth = style.getPropertyValue("width");
 
-                canvas.width  = newWidth;
-                canvas.height = newWidth;
-        }
-    </script>
 
 </head>
 <body onresize="resize_canvas()">
@@ -200,7 +191,7 @@ well this almost passes as art...
     <div class="row">
     <h3><center>Java/Processing</center></h3>
       <div class="col-md-6">
-      <canvas id="canvas" data-processing-sources="balldemo/balldemo.pde">If you're reading this, your browser doesn't support processing.js</canvas>
+      <canter><canvas id="canvas" data-processing-sources="balldemo/balldemo.pde">If you're reading this, your browser doesn't support processing.js</canvas> </canter>
       <p>circley demo</p>
     </div>
     <div class="col-md-6">
