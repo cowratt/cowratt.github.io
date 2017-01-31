@@ -13,8 +13,8 @@ float radius = 40;
 
 ArrayList<Orbital> balls;
 Orbital ogb;
-float decay = 0.95;
-float strength = 0.3;
+float decay = 0.90;
+float strength = 0.6;
 color bg = #C7D5E8;
 
 boolean sizechange = false;
@@ -28,7 +28,7 @@ void setup(){
     background(bg);
     strokeWeight(1);
     textSize(15);
-    frameRate(120);
+    frameRate(60);
     
     balls = new ArrayList<Orbital>();
     balls.add(new Orbital(color(random(255), random(255), random(255)), 1));
