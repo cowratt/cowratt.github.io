@@ -30,7 +30,7 @@ void setup(){
     textSize(15);
     frameRate(60);
     colorMode(HSB, 360, 100, 100);
-    
+    window.addEventListener("resize", myResize, false);
     balls = new ArrayList<Orbital>();
     balls.add(new Orbital(color(random(360), random(70,100), random(80,100)), 1));
     ogb = (Orbital) balls.get(0);
@@ -83,6 +83,14 @@ void program(){
         b.orbit(b0.position);
     }
 
+}
+void myResize(){
+    if(window.innerWidth < 700) resizeCanvas(300,300);
+    else resizeCanvas(500,500);
+}
+void resizeCanvas(int newWidth, int newHeight) {
+  size(newWidth, newHeight);
+  redraw();  // not needed if frameRate is high enough
 }
 
 class Orbital {
