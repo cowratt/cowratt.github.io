@@ -2,7 +2,7 @@ color stroke1, stroke2, stroke3, stroke4, stroke5 = color(0);
 float help = 1;
 boolean bg = true;
 void setup(){
-    size(500,500, P3D);
+    size(400,400, P3D);
     rectMode(CENTER);
     noFill();
     stroke(0);
@@ -15,25 +15,15 @@ void setup(){
     stroke3 = color(random(100), 240, 240);
     stroke4 = color(random(100), 240, 240);
     stroke5 = color(random(100), 240, 240);
-    myResize();
-    window.addEventListener("resize", myResize, false);
+
  
 }
 
-void myResize(){
-    if(window.innerWidth > 1200){ resizeCanvas(500,500); return;}
-    if(window.innerWidth > 600){ resizeCanvas(450,450); return;}
-    else resizeCanvas(300,300);
-}
-void resizeCanvas(int newWidth, int newHeight) {
-  size(newWidth, newHeight, P3D);
-  redraw();  // not needed if frameRate is high enough
-}
 
 void draw(){
     if(bg) background(20);
     translate(width/2, height/2);
-    
+    strokeWeight(3);
     stroke(stroke1);
     rotateX(sin(frameCount / 100.0)* PI*help);
     rotateY(cos(frameCount / 100.0)* PI*help);
@@ -48,12 +38,12 @@ void draw(){
     rotateY(sin(frameCount / 100.0 + 120)* PI);
     rotateZ(cos(frameCount / 100.0 + 120)* PI);
     box(200,200,200);
-    if(width > 400){
+    strokeWeight(5);
     stroke(stroke4);
-    rotateY(sin(frameCount / 100.0 + 160)* PI);
-    rotateZ(cos(frameCount / 100.0 + 160)* PI);
+    rotateY(sin(frameCount / 200.0 + 160)* PI);
+    rotateZ(cos(frameCount / 200.0 + 160)* PI);
     box(280,280,280);
-    }
+
 }
 
 void keyPressed(){
