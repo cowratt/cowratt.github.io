@@ -1,80 +1,83 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Contact</title>
+	<title>Contact </title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/sandstone/bootstrap.min.css" rel="stylesheet" integrity="sha384-QqZs0aSOGFan3GWVdP4PyCBp6icaF/4n8Q+wsmZUTiiVIqE4r4tFYcb8Osf+8y45" crossorigin="anonymous">
+  <!-- Bootstrap core CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/sandstone/bootstrap.min.css" rel="stylesheet" integrity="sha384-G3G7OsJCbOk1USkOY4RfeX1z27YaWrZ1YuaQ5tbuawed9IoreRDpWpTkZLXQfPm3" crossorigin="anonymous">
 
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../Bootstrap/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <link href="https://maxcdn.bootstrapcdn.com/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="main.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="main.css" rel="stylesheet">
+  <link href="processing/highlight/styles/gruvbox-dark.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
+
+
 </head>
-<body>
-	<nav class="navbar navbar-default navbar-static-top">
+<body onresize="resize_canvas()">
+  <nav class="navbar navbar-default navbar-static-top">
     <div class="container">
       <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="index.html">Conrad Menchine</a>
-       </div>
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="index.html" class="navbar-brand">Conrad Menchine</a>
+      </div>
 
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-      <ul class="nav navbar-nav">
-        <li><a href="index.html">Home <span class="sr-only">(current)</span></a></li>
-        <li><a href="about.html">About</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resume <span class="caret"></span></a>
-          <ul class="dropdown-menu">
+        <ul class="nav navbar-nav">
 
-            <li><a href="resume.html">Overview</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="school.html">Academic achievements</a></li>
-            <li><a href="cs.html">Computer science</a></li>
-            <li><a href="art.html">Graphic arts</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li class="active"><a href="gallery.html">Gallery</a></li>
 
-
-          </ul>
-        </li>
-      </ul>
-
-      <ul class="nav navbar-nav navbar-right">
-        <li class="active"><a href="#">Contact</a></li>
-        <li><a href="https://www.youtube.com/c/ConradMenchine" target="_blank"><img class="icon" alt="YouTube" src="yt-light.png" height="20px"></a></li>
-        <li><a href="https://github.com/cowratt" target="_blank"><img class="icon" alt="GitHub" src="github-white.png" height="25px"></a></li>
-      </ul>
-    </div>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="contact.html">Contact</a></li>
+          <li class="icon"><a href="https://www.youtube.com/c/ConradMenchine" target="_blank"><img  alt="YouTube" src="images/yt-light.png" height="20px"></a></li>
+          <li class="icon"><a href="https://github.com/cowratt" target="_blank"><img alt="GitHub" src="images/github-white.png" height="25px"></a></li>
+        </ul>
+      </div>
     </div>
   </nav>
-	
+
   <section class="contact">
     <div class="container">
-    <div class="row">
-      <h1>Contact</h1>
-      <hr>
-      <div class="col-md-7">
-        <p>Okay movie. 7/10</p>
+      <div class="row">
+        <h1>Contact</h1>
+        <hr>
+        <div class="col-md-7">
+          <p>If you were interested at all by what you saw on my website, feel free to contact me! I'm free almost every day, and I'll try to respond to your message as quickly as possible.</p>
 
-      </div>
-      <div class="col-md-5">
-        <p>call me</p>
         </div>
-    </div>
+        <div class="col-md-5">
+          <form method="POST" action="http://formspree.io/conrad.menchine@gmail.com">
+            <label for="name">Your Name:</label>
+            <input type="text" class="form-control" name="name" placeholder="Your Name" id="name">
+
+            <label for="email">Your Email:</label>
+            <input type="text" class="form-control" name="_replyto" placeholder="Your Email" id="email">
+            <label for="message">Your Message:</label>
+            <textarea name="message" placeholder="Your Message" class="form-control" rows="5" id="message"></textarea>
+            <input type="text" name="_gotcha" style="display:none" />
+            <input type="hidden" name="_subject" value="Email from menchine.com" />
+            <button type="submit" class="btn btn-primary">Send</button>
+          </form>
+        </div>
+      </div>
     </div>
   </section>
 
-	<!-- Javascript and shit -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../Bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../Bootstrap/assets/js/ie10-viewport-bug-workaround.js"></script>
+  <!-- Javascript and shit -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+  <script src="../Bootstrap/dist/js/bootstrap.min.js"></script>
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <script src="../Bootstrap/assets/js/ie10-viewport-bug-workaround.js"></script>
 </body>
 </html>
