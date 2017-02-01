@@ -236,7 +236,7 @@ well this almost passes as art...
   <div class="container">
     <h1><center>Programming!</center></h1>
     <h2><small><center>C++, Java, and Python.</center></small></h2>
-    <p>I've been programming for about four years now, starting with Python, and moving towards C++ and Java because I wanted to expand my knowledge. Below are some screenshots, as well as some live interactive code. There are about a thousand things that can go wrong when rendering the code, so I reccomend a desktop Chrome browser for optimal viewing.</p>
+    <p>I've been programming for about four years now, starting with Python, and moving towards C++ and Java because I wanted to expand my knowledge. Below is some live embedded code written in Processing that shows off what I've done. There are about a thousand things that can go wrong when rendering the code, so I recommend a desktop Chrome browser for optimal viewing.</p>
     <div class="row">
       <h3><center>Java/Processing</center></h3>
       <div class="col-lg-6">
@@ -302,12 +302,25 @@ void setup(){
 
 
 
-//------------------------- The draw function: shows splash screen and program
+//------------------------- The draw function: runs every frame
 void draw(){
-
-    program();
+  //draws the background (clears the screen) when the mouse is pressed
+  if( mousePressed){
+      background(bg);
+  }
+  //Treats the first mouse as a vector, and has the first circle in the chain orbit it
+  mouse.set(mouseX, mouseY);
+  stroke(0);
+  ogb.orbit(mouse);
+  //has each ball in the rest of the chain orbit the ball ahead of it
+  for(int i=1; i&lt;balls.size();i++){
+      Orbital b = balls.get(i);
+      Orbital b0 = balls.get(i-1);
+      b.orbit(b0.position);
+  }
 }
 
+//when a key is pressed, deletes all of the balls and generates a new set with random colors
 void keyPressed(){
     for(int i = 0;i &lt; 5; i++){
         balls.remove(0);
@@ -319,29 +332,13 @@ void keyPressed(){
     }   
 }
 
-void program(){
-    textSize(min(width,height)/26);
-    if( mousePressed){
-        background(bg);
-    }
-    mouse.set(mouseX, mouseY);
-    stroke(0);
-    ogb.orbit(mouse);
 
-    for(int i=1; i&lt;balls.size();i++){
-        Orbital b = balls.get(i);
-        Orbital b0 = balls.get(i-1);
-        b.orbit(b0.position);
-    }
-
-}
-
-
+//this defines what every circle/ball is, and allows them to be quickly replicated
 class Orbital {
     PVector position = new PVector(0,0);
     PVector velocity = new PVector(0,0);
     PVector tempvel = new PVector(0,0);
-    //Don't judge. I use the other spelling to differentiate between the class and the private object
+    
     color colour;
     float delay;
     float mult;
