@@ -108,6 +108,7 @@ padding-bottom: 2em;
 	background-color: #424242;
 	color: #f4f4f4;
 	padding-top: 2em;
+	padding-bottom: 1em;
 }
 .triggerclass{
 	border-color: transparent;
@@ -118,7 +119,14 @@ padding-bottom: 2em;
 .modal-content{
 	background-color:#bcbcbc;
 }
-
+.programming{
+	background-color:#e0e0e0;
+}
+pre{
+	overflow: auto;
+	background: #282828;
+	max-height: 30em;
+}
 .double p{
 	text-align: center;
 }
@@ -138,9 +146,4 @@ p{
 }
 btn{
 	float: bottom;
-}
-pre{
-	overflow: auto;
-	background: #282828;
-	max-height: 30em;
 }
