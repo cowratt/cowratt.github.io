@@ -20,33 +20,30 @@ void setup(){
 
 
 void draw(){
-    if(bg){
-        fill(0,0,20,10);
-        rect(width/2,height/2,width+3,height+3);
-        
-    }
+    if(bg) background(20);
     noFill();
     translate(width/2, height/2);
-    strokeWeight(3);
+pushMatrix();
     stroke(stroke1);
     rotateX(sin(frameCount / 100.0)* PI*help);
     rotateY(cos(frameCount / 100.0)* PI*help);
     box(40, 40, 40);
-        
+    
     stroke(stroke2);
     rotateZ(sin(frameCount / 100.0 + 50)* PI);
     rotateX(cos(frameCount / 100.0 + 50)* PI);
     box(120,120,120);
-    
+popMatrix();
     stroke(stroke3);
     rotateY(sin(frameCount / 100.0 + 120)* PI);
     rotateZ(cos(frameCount / 100.0 + 120)* PI);
     box(200,200,200);
-    strokeWeight(5);
+
     stroke(stroke4);
-    rotateY(sin(frameCount / 200.0 + 160)* PI);
-    rotateZ(cos(frameCount / 200.0 + 160)* PI);
+    rotateY(sin(frameCount / 100.0 + 160)* PI);
+    rotateZ(cos(frameCount / 100.0 + 160)* PI);
     box(280,280,280);
+
 
 }
 
