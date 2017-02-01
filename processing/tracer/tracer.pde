@@ -2,7 +2,7 @@ color stroke1, stroke2, stroke3, stroke4, stroke5 = color(0);
 float help = 1;
 boolean bg = true;
 void setup(){
-    size(400,400, P3D);
+    size(365, 365, P3D);
     rectMode(CENTER);
     noFill();
     strokeWeight(3);
