@@ -5,10 +5,9 @@ void setup(){
     size(400,400, P3D);
     rectMode(CENTER);
     noFill();
-    stroke(0);
     strokeWeight(3);
     //strokeCap(PROJECT);
-    colorMode(HSB, 100, 255, 255);
+    colorMode(HSB, 100, 255, 255, 100);
     
         stroke1 = color(random(100), 240, 240);
     stroke2 = color(random(100), 240, 240);
@@ -21,7 +20,12 @@ void setup(){
 
 
 void draw(){
-    if(bg) background(20);
+    if(bg){
+        fill(0,0,20,10);
+        rect(width/2,height/2,width+3,height+3);
+        
+    }
+    noFill();
     translate(width/2, height/2);
     strokeWeight(3);
     stroke(stroke1);
