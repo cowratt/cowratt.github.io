@@ -122,11 +122,18 @@ padding-bottom: 2em;
 }
 .programming{
 	background-color:#e0e0e0;
+	padding-bottom: 1em;
 }
 pre{
 	overflow: auto;
 	background: #282828;
 	max-height: 30em;
+}
+.gallery-footer{
+	padding-top: 2em;
+padding-bottom: 2em;
+	background-color: #424242;
+	color: #e0e0e0;
 }
 .double p{
 	text-align: center;
