@@ -16,7 +16,7 @@ void setup(){
     stroke4 = color(random(100), 240, 240);
     stroke5 = color(random(100), 240, 240);
     myResize();
-        window.addEventListener("resize", myResize, false);
+    window.addEventListener("resize", myResize, false);
  
 }
 
@@ -26,7 +26,7 @@ void myResize(){
     else resizeCanvas(300,300);
 }
 void resizeCanvas(int newWidth, int newHeight) {
-  size(newWidth, newHeight);
+  size(newWidth, newHeight, P3D);
   redraw();  // not needed if frameRate is high enough
 }
 
