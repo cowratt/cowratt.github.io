@@ -57,7 +57,7 @@ void draw(){
   }
   //Treats the mouse as a vector, and has the first circle in the chain orbit it. If the mouse isn't on the screen, plays a demo
   if(mouseX == 0 && mouseY == 0){
-      amp = 80* sin((frameCount % loopVal) * PI / loopVal);
+      amp = width/6 * sin((frameCount % loopVal) * PI / loopVal);
       mouse.set(amp*sin((frameCount % 30) * PI / 15) + width/2, amp*cos((frameCount % 30) * PI / 15) + height/2);
       if(nextReset < frameCount){
           keyPressed();
