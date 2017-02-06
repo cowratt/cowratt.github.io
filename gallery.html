@@ -252,17 +252,17 @@ well this almost passes as art...
   <div class="container">
     <h1><center>Programming!</center></h1>
     <h2><small><center>C++, Java, and Python.</center></small></h2>
-    <p>I've been programming for the last four years, starting with Python, and moving towards C++ and Java because I wanted to expand my knowledge. Below is some live embedded code written in Processing that shows off what I've done. Some of the code is interactive on desktop, and is marked accordingly.</p>
+    <p>I've been programming for the last four years, starting with Python, and moving towards C++ and Java because I wanted to expand my knowledge. Below is some live embedded code written in Processing that shows off what I've done. Some of the code is interactive on desktop, and is marked accordingly. If you're using a smartphone to view this website, the interactivity may not work, due to the fact that you don't have a mouse or keyboard.</p>
     <div class="row">
       <div class="col-lg-6">
         <center><canvas id="canvas" data-processing-sources="processing/balldemo/balldemo.pde">If you're reading this, your browser doesn't support processing.js</canvas> </center>
         <h2><center>Interactive "Orbit" program</center></h2>
-        <center><p>Moving the mouse over this will draw, and clicking will clear the canvas. Pressing the spacebar should give the program a new color palette</p></center>
+        <center><p>On desktop, moving the mouse over this will draw, and clicking will clear the canvas. Pressing the spacebar should give the program a new color palette</p></center>
       </div>
       <div class="col-lg-6">
         <center><canvas id="canvas" data-processing-sources="processing/the_matrix/the_matrix.pde">If you're reading this, your browser doesn't support processing.js</canvas> </center>
         <h2><center>"The Matrix" clone</center></h2>
-        <center><p>Sadly, this code snippet is not interactive. It was made to test how transparency works in Processing.</p></center>
+        <center><p>This code snippet is not interactive. It was made to test how transparency works in Processing.</p></center>
       </div>
     </div>
     <div class="row">
@@ -277,7 +277,7 @@ criticism and pull requests encouraged
 //--------------------- Setting up non-canvas-dependant variables
 
 boolean started = false;
-PVector mouse = new PVector(mouseX, mouseY);
+PVector mouse = new PVector(width/2, height/2);
 float radius = 40;
 
 ArrayList&lt;Orbital&gt; balls;
@@ -286,10 +286,11 @@ float decay = 0.90;
 float strength = 0.6;
 color bg = #C7D5E8;
 
-boolean sizechange = false;
-String sizetext = "off";
 
 
+float amp = 0;
+int loopVal = 240;
+int nextReset = loopVal;
 
 //---------------------- Setting up canvas and canvas-dependant variables
 void setup(){
@@ -306,12 +307,14 @@ void setup(){
     ogb = (Orbital) balls.get(0);
 
     
-    for(int i = 0;i &lt; 4; i++){
+    for(int i = 0;i &lt; 4; i  ){
         balls.add(new Orbital(color(random(360), random(70,90), random(70,90)), 0.9));
     }
     //These are required to allow for resizing
+
     myResize();
-    window.addEventListener("resize", myResize, false);
+    window.addEventListener(&quot;resize&quot;, myResize, false);
+
 }
 
 
@@ -323,12 +326,21 @@ void draw(){
   if( mousePressed){
       background(bg);
   }
-  //Treats the first mouse as a vector, and has the first circle in the chain orbit it
-  mouse.set(mouseX, mouseY);
+  //Treats the mouse as a vector, and has the first circle in the chain orbit it. If the mouse isn&#39;t on the screen, plays a demo
+  if(mouseX == 0 &amp;&amp; mouseY == 0){
+      amp = 80* sin((frameCount % loopVal) * PI / loopVal);
+      mouse.set(amp*sin((frameCount % 30) * PI / 15)   width/2, amp*cos((frameCount % 30) * PI / 15)   height/2);
+      if(nextReset &lt; frameCount){
+          keyPressed();
+          nextReset = frameCount   loopVal;
+      }
+      //ellipse(mouse.x, mouse.y, 20, 20);
+  }
+  else mouse.set(mouseX, mouseY);
   stroke(0);
   ogb.orbit(mouse);
   //has each ball in the rest of the chain orbit the ball ahead of it
-  for(int i=1; i&lt;balls.size();i++){
+  for(int i=1; i&lt;balls.size();i  ){
       Orbital b = balls.get(i);
       Orbital b0 = balls.get(i-1);
       b.orbit(b0.position);
@@ -337,12 +349,12 @@ void draw(){
 
 //when a key is pressed, deletes all of the balls and generates a new set with random colors
 void keyPressed(){
-    for(int i = 0;i &lt; 5; i++){
+    for(int i = 0;i &lt; 5; i  ){
         balls.remove(0);
     }
     balls.add(new Orbital(color(random(360), random(70,100), random(80,100)), 1));
     ogb = (Orbital) balls.get(0);
-    for(int i = 0;i &lt; 4; i++){
+    for(int i = 0;i &lt; 4; i  ){
         balls.add(new Orbital(color(random(360), random(70,100), random(80,100)), 0.9));
     }   
 }
@@ -350,16 +362,16 @@ void keyPressed(){
 
 //this defines what every circle/ball is, and allows them to be quickly replicated
 class Orbital {
-    PVector position = new PVector(0,0);
-    PVector velocity = new PVector(0,0);
+    PVector position = new PVector(width/2,height/2);
+    PVector velocity = new PVector(-90,0);
     PVector tempvel = new PVector(0,0);
     
-    color colour;
+    color ballColor;
     float delay;
     float mult;
     
-    Orbital(color doot, float mul) {
-        colour = doot;
+    Orbital(color c, float mul) {
+        ballColor = c;
         mult = mul;
     }
     void orbit(PVector follow){
@@ -368,20 +380,19 @@ class Orbital {
             delay = 1;
         }
         follow.set(follow);
-        velocity.x = (follow.x - position.x + velocity.x) * delay * mult;
-        velocity.y = (follow.y - position.y + velocity.y) * delay * mult;
+        velocity.x = (follow.x - position.x   velocity.x) * delay * mult;
+        velocity.y = (follow.y - position.y   velocity.y) * delay * mult;
         tempvel.set(velocity);
         tempvel.mult(0.1*strength);
         position.add(tempvel);
-        fill(colour);
-        if(sizechange){
-            radius = max(15, min(70, (velocity.mag()) / 20));}
-            else{radius = 40;}
+        fill(ballColor);
+                    radius = 40;
             ellipse(position.x, position.y, radius, radius);
-        }
     }
+}
 
 //These are required to make the web version resizable
+
 void myResize(){
     if(window.innerWidth &gt; 1200){ resizeCanvas(500,500); return;}
     if(window.innerWidth &gt; 600){ resizeCanvas(450,450); return;}
@@ -398,7 +409,7 @@ void resizeCanvas(int newWidth, int newHeight) {
       <div class="col-lg-6">
       <center><canvas id="canvas" data-processing-sources="processing/tracer/tracer.pde">If you're reading this, your browser doesn't support processing.js</canvas> </center>
       <h2><center>The 1960s simulator</center></h2>
-        <center><p>I don't really know why I made this one... Holding the mouse down enables "Lucy in the Sky with Diamonds" mode and pressing the spacebar changes the color palette.</p></center>
+        <center><p>On desktop, Holding the mouse down enables "Lucy in the Sky with Diamonds" mode and pressing the spacebar changes the color palette.</p></center>
       </div>
    </div>
  </div>
