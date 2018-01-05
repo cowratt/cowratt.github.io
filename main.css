@@ -129,6 +129,9 @@ pre{
 	background: #282828;
 	max-height: 30em;
 }
+#spiral:hover {
+	content: url(images/graphic-art/illustration-border.png);
+}
 .gallery-footer{
 	padding-top: 2em;
 padding-bottom: 2em;
