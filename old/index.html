@@ -29,7 +29,10 @@ and has a bunch of weird css stuff because I really don't like using javascript.
 
 
 
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="https://maxcdn.bootstrapcdn.com/js/ie10-viewport-bug-workaround.js"></script>
 
 	<title>Conrad Menchine</title>
 
@@ -42,8 +45,14 @@ and has a bunch of weird css stuff because I really don't like using javascript.
     <!-- Custom styles for this template -->
     <link href="main.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
+
+    <script type="text/javascript" src="js/vue.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/main.css"></link>
 </head>
 <body>
+	<div id="vue-div">
 	<nav class="navbar navbar-default navbar-static-top">
 		<div class="container">
 			<div class="navbar-header">
@@ -74,56 +83,50 @@ and has a bunch of weird css stuff because I really don't like using javascript.
 		</div>
 	</nav>
 
+	<br><br><br>
 
+	<div class="container-fluid">
 
-	<header>
-		<div class="container">
+		<transition name="slide-up-fade">
+		<div class="title" v-if="mode == 'title'">
 			<div class="row">
-				<div class="header-frontpage">
-					<h1>Conrad Menchine</h1>
-	        <br>
-					<h2>Programmer and Graphic Artist</h2>
-				</div>
+				<img src="img/me.jpg" class="img-fluid img-circle" id="mainPic">
 			</div>
-			<div class="row">
-				<br><br>
-				<br>
-				<div class="col-xs-6 text-center">
-					<a class="btn btn-primary btn-lg" href="code" role="button">Programming</a>
-				</div>
-				<div class="col-xs-6 text-center">
+			<h1>Conrad Menchine</h1>
+		</div></transition>
+		<transition name="fade"><div v-if="mode == 'title'">
+				<div class="row">
+					<div class="col-lg-4">
+						<div class="card" id="card-music" v-on:click="setMode('Music')">
+						  <div class="card-body">
+						    <h4>Music</h4>
+						  </div>
+						</div>
+					</div>
+					<div class="col-lg-4">
+						<div class="card" id="card-art" v-on:click="setMode('Art')">
+						  <div class="card-body">
+						    <h4>Art</h4>
+						  </div>
+						</div>
+					</div>
+					<div class="col-lg-4">
+						<div class="card " id="card-code" v-on:click="setMode('Code')">
+						  <div class="card-body">
+						    <h4>Code</h4>
+						  </div>
+						</div>
+					</div>
 
-					<a class="btn btn-primary btn-lg" href="gallery" role="button">GALLERY</a>
-				</div>
-			</div>
-		</div>
-	</header>
+					</div>
+				
+				<center><h5 style="max-width: 600px; padding-top: 60px;">I'm a guy that likes making things. I like digital art, I write code and make short videos, and occasionally I publish songs. This site is new and i haven't finished adding content. I made it with Bootstrap and Vue.</h5></center>
+</div>
+		</transition>
 
-<section class="about-me">
-    <div class="container">
-    <div class="row">
-    <div class="col-md-5 col-md-offset-0 col-md-push-7 col-xs-8 col-xs-offset-2 col-xs-push-0" >
-        <img src="images/me.jpg" class="img-responsive img-rounded">
-        <br>
-        </div>
-      <div class="col-md-7 col-xs-12 col-md-pull-5 col-xs-pull-0">
-        <p>I&#39;m a student pursuing a degree in computer science or computer engineering. I&#39;ve had an interest in art my whole life, with a focus on digital and musical arts. I have experience programming for desktop, web, and mobile, as well as producing graphic art, motion graphics, and 3D solids. I also do contract work and can be reached through <a href="contact">the contact page of this website.</a></p>
-      </div>
-      
-    </div>
-    </div>
-  </section>
+	</div>
+</div>
 
 
-
-
-
-
-	<!-- Javascript and shit -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="https://maxcdn.bootstrapcdn.com/js/ie10-viewport-bug-workaround.js"></script>
 </body>
 </html>
