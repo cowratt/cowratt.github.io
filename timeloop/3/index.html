@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="../main.css">
+	<title>Party like you're happy</title>
+</head>
+<body>
+	<div class="buttons">
+		<center>
+		<button onclick="prev()">prev</button>
+		<button onclick="next()">next</button>
+		</center>
+	</div>
+	<div class="main">
+		<center>
+			<img src="art.gif">
+			<br><br>
+			<h2>Hello</h2>
+		</center>
+	</div>
+<div style="opacity: 0 !important">
+	<iframe width="30" height="30" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/568149672&color=%231e1e1e&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+</div>
+
+
+
+
+
+
+
+	<script type="text/javascript">
+		function prev(){
+			var url = window.location.href 
+			console.log(url)
+			var re = /\/(\d+)\/?/
+			url = url.replace(re, function(match, p1){
+				console.log(p1)
+				return "/" + (p1 - 1) + "/"
+			})
+			window.location = url
+		}
+		function next(){
+			var url = window.location.href 
+			console.log(url)
+			var re = /\/(\d+)\/?/
+			url = url.replace(re, function(match, p1){
+				console.log(p1)
+				return "/" + (eval(p1) + 1) + "/"
+			})
+			window.location = url
+		}
+	</script>
+</body>
+</html>
