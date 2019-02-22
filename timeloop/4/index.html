@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <script src="p5.min.js"></script>
+    <script src="p5.dom.min.js"></script>
+
+    <script src="sketch.js"></script>
+    <script src="game/game.js"></script>
+    <link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+  <body>
+  	<div class="buttons">
+		<center>
+		<button onclick="prev()">prev</button>
+		<button onclick="next()">next</button>
+		</center>
+	</div>
+	<script type="text/javascript">
+		function prev(){
+			var url = window.location.href 
+			console.log(url)
+			var re = /\/(\d+)\/?/
+			url = url.replace(re, function(match, p1){
+				console.log(p1)
+				return "/" + (p1 - 1) + "/"
+			})
+			window.location = url
+		}
+		function next(){
+			var url = window.location.href 
+			console.log(url)
+			var re = /\/(\d+)\/?/
+			url = url.replace(re, function(match, p1){
+				console.log(p1)
+				return "/" + (eval(p1) + 1) + "/"
+			})
+			window.location = url
+		}
+	</script>
+  </body>
+</html>
