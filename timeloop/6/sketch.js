@@ -99,8 +99,8 @@ class player{
     }
     else if(this.defending){
       this.active_img = this.defend_img
-      if(this.timer % 20 == 0)
-          this.x -= this.step_size*this.direction/2
+      if(this.timer % 25 == 0)
+          this.x -= this.step_size*this.direction/2.2
     }
     else this.active_img = this.neutral_img
     
@@ -128,7 +128,7 @@ class player{
     }
     else if(this.attacking && other.defending){
       //bounce this back
-      this.x -= 2*this.step_size*this.direction
+      this.x -= 3.2*this.step_size*this.direction
     }
   }
   calcWin(other){
