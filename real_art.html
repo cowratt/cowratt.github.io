@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Menchine: Real Art</title>
+        <script src="/static/js/vue.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+        <link rel="stylesheet" href="/static/css/main.css">
+        
+    </head>
+
+    <body>
+        
+        <div id="app" class="main">
+            <div v-if="temp_forgotten">
+                <p>forgotten</p>
+            </div>
+            <div v-else class="wrapper">
+                
+<div class="spacer-50px"></div>
+    <h1>Real Art</h1>
+    <br>
+    <img src="/static/img/art/real_art.gif" class="image_200">
+    <p>Most people these days don't know what real art looks like. Maybe you do, ${user_name}.</p>
+    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/0kM0ZEqtyJ4" frameborder="0" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/T94jY53EbCk" frameborder="0" allowfullscreen></iframe>
+    <a href="/art"><h1 class="backarrow">←</h1></a>
+
+                
+            </div>
+            <script src="/static/js/main.js"></script>
+        </div>
+    </body>
+    </html>

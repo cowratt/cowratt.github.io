@@ -70,7 +70,7 @@ function calcCollision(a, b, width){
 
 class player{
     player_width = 135
-    attack_time = 10
+    attack_start_time = 10
     attack_dur = 8
     step_size = 15
   constructor(x, y, dir, name, neutral, attack, defend){
@@ -84,15 +84,20 @@ class player{
     this.canMove = false
     this.attacking = false
     this.defending = false
+    this.startAttack = true
     this.name = name
   }
   draw(){
     
     this.timer++
-    if(this.timer == this.attack_time && !this.attacking){
-      this.defending = true
+    if(this.timer == this.attack_start_time){
+      if(this.startAttack){
+        this.attacking = true
+        this.defending = false
+      }
+      this.startAttack = false
     }
-    if(this.timer == this.attack_time + this.attack_dur && this.attacking) this.attacking = false
+    if(this.timer == this.attack_start_time + this.attack_dur && this.attacking) this.attacking = false
     if(this.attacking){
       this.active_img = this.attack_img
       //this.x += this.direction*3
@@ -113,10 +118,13 @@ class player{
     this.timer = 0
   }
   released(){
-    this.defending = false
-    if(this.timer <= this.attack_time){
-      this.attacking = true
+    
+    if(this.timer <= this.attack_start_time){
+      this.startAttack = true
       this.x += this.step_size*this.direction
+    }
+    else{
+      this.defending = false
     }
   }
   calcBounce(other){

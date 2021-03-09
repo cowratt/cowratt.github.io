@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Menchine: Art</title>
+        <script src="/static/js/vue.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+        <link rel="stylesheet" href="/static/css/main.css">
+        
+<script type="text/javascript" src="static/js/processing.js"></script>
+
+    </head>
+
+    <body>
+        
+        <div id="app" class="main">
+            <div v-if="temp_forgotten">
+                <p>forgotten</p>
+            </div>
+            <div v-else class="wrapper">
+                
+<h1><a href="real_art" class="hidden_link">Art</a></h1>
+<div>
+    <canvas id="canvas" data-processing-sources="static/interactivedemo.pde">If you're reading this, your browser doesn't support processing.js</canvas>
+    <p>I've always been fascinated by the <a href="interactive">interactive</a>. You've probably realized that by now, ${user_name}.</p>
+</div>
+<div v-if="art_progress > 0">
+    <a href="3d"><img src="static/img/art/car.jpg" class="image_600"></a>
+    <p>Then, I took a turn towards photorealism.</p>
+</div>
+<div v-if="art_progress > 1">
+    <img src="static/img/art/fox.jpg" class="image_200">
+    <img src="static/img/art/lake.jpg" class="image_400">
+    <br>
+    <a href="https://menchine.com/processing-projects/doesn't%20deserve%20its%20own%20folder/dustgen/html"><img src="static/img/art/dust.jpg" class="image_600"></a>
+    <p>I tried to replicate dust and pointillism with code.</p>
+    <a href="/"><h1 class="backarrow">←</h1></a>
+</div>
+<div v-else>
+    <a @click="art_advance" class="clickable">...</a>
+</div>
+
+<h2>Hello ${user_name}. </h2>
+
+                
+            </div>
+            <script src="/static/js/main.js"></script>
+        </div>
+    </body>
+    </html>

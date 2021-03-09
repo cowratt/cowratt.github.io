@@ -1,118 +1,138 @@
 body{
-    background: #292929;
-}
-h1{
+    background-color:#292929;
     color: #eee;
 }
-h2{
-	color: #eee;
+.animated_bg{
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background-image: url("/static/img/background.gif");
 }
 
-p{
-	 color: #eee;
-	 font-size: 16px;
+.spacer-50px{
+    padding-top: 50px;
 }
-@media (min-width: 992px) {
-	p{
-		font-size: 14px;
-	}
+
+.spacer-100px{
+    padding-top: 100px;
 }
-.middle{
-		padding-top: calc((100vh - 550px)/2);
-		margin-left: 0px;
-		padding-left: 0px;
-		padding-right: 0px;
+
+.cookies{
+    color: #292929
 }
-@media (max-width: 768px) {
-   .middle{
-   	padding-top: 0px;
-		padding-left: 20px;
-		padding-right: 20px;
+
+.spacer-200px{
+    padding-top: 200px;
 }
-	}
+
+.spacer-300px{
+    padding-top: 300px;
+}
+
+@media only screen and (max-height: 600px) {
+    .spacer-50px{
+        padding-top: 0px;
+    }
+    
+    .spacer-100px{
+        padding-top: 50px;
+    }
+    
+    .cookies{
+        color: #292929
+    }
+    
+    .spacer-200px{
+        padding-top: 100px;
+    }
+    
+    .spacer-300px{
+        padding-top: 150px;
+    }
+  }
+
+.wrapper{
+    min-height: 80%;
+}
 .main{
-	padding-left: 20px;
-	padding-right: 20px;
+ 
+    text-align: center;
+    align-items: center;
 }
 
-.musiclabel{
-	position: relative;
+a{
+    color: #88f;
+}
+#app{
+    margin: 0 auto;
+    width: 700px;
 }
 
-i{
-	font-size: 50px;
-	color: #eee;
+.footer{
+    padding-top: auto;
 }
 
-.portfolio i{
-	font-size: 40px;
-	margin: 10px;
+.image_600{
+    max-width: 600px;
+}
+.image_400{
+    max-width: 400px;
+}
+.image_200{
+    max-width: 200px;
+}
+.image_32{
+    max-width: 32px;
+}
+@media only screen and (max-width: 1000px) {
+    .max-400{
+        max-width: 400px;
+    }
+    #app{
+        width: 500px;
+    }
+  }
+
+.clickable{
+    cursor: pointer;
+    font-size: 25px;
+}
+.clickable:hover{
+    cursor: hand;
 }
 
-.music a i{
-	font-size: 100px;
-	margin-left: 20px;
-	margin-right: 20px;
+#secretBox{
+    width: 100px;
+    height: 100px;
+    
+    z-index: 10;
+    background-color: aquamarine;
+}
+.hidden_link{
+    color: #eee;
+    text-decoration: none;
+}
+.hidden_link a:link{
+    color: #eee;
 }
 
-.sidebtn{
-	vertical-align: middle;
-	width: auto;
-	height: 100%;
-	padding-top: 10px;
-}
-.sidebtn:hover{
-	background: rgba(60,60,60,60);
-	cursor: pointer;
+.huge{
+    font-size: 72PX;
 }
 
-.portfolioBtn{
-	width: auto;
-	padding-top: auto;
-}
-.portfolioBtn:hover{
-	background: rgba(60,60,60,60);
-	cursor: pointer;
+.dim_text{
+    color: #555;
 }
 
-.sidebtnLeft{
-	padding-left: 30px;
-}
-.sidebtnRight{
-	padding-right: 30px;
+.scrollbox{
+    height: 300px;
+    overflow: scroll;
 }
 
-#portfolioButton{
-	padding-top: 50px;
-	vertical-align: bottom;
-}
-
-.bigtext{
-	font-size: 72px;
-	/*color: #021e47;*/
-}
-
-.groupr{
-	background-color: #2a3f6f;
-
-	color: #fff;
-}
-
-.lk{
-	background-color: #111;
-
-	color: #fff;
-}
-.textbox{
-	margin-top: 30px;
-	margin-bottom: 30px;
-}
-
-.portfolio img{
-	max-height: 160px;
-	padding-top: 10px;
-}
-
-.art img{
-	margin-bottom: 30px;
+.mono{
+    text-align: left;
+    font-family: monospace;
 }

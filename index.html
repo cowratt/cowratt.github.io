@@ -1,241 +1,44 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<script src="/static/js/jquery.min.js"></script>
-  	<script src="/static/js/bootstrap.bundle.min.js"></script>
-  	<link href="/static/css/bootstrap.min.css" rel="stylesheet">
-  	<link href="/static/css/main.css" rel="stylesheet">
-    <link href="/static/css/all.css" rel="stylesheet">
-    <meta name="viewport" content="width=device-width height=device-height, initial-scale=1">
-  	
-<script src="/static/js/main.js"></script>
+    <head>
+        <title> Menchine: Home</title>
+        <script src="/static/js/vue.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+        <link rel="stylesheet" href="/static/css/main.css">
+        <script>
+    setTimeout(()=>{app.main_page_5_seconds = true;},5000)
+</script>
+    </head>
 
-	<title>Cone</title>
-</head>
-<body>
-<div id="vue-div">
-	
+    <body>
+        
+        <div id="app" class="main">
+            <div v-if="temp_forgotten">
+                <p>forgotten</p>
+            </div>
+            <div v-else class="wrapper">
+                
+<div class="spacer-100px"></div>
+            <a href="/about">
+                <video width="200" height="200" autoplay loop muted>
+                    <source src="/static/img/v3.mp4" type="video/mp4" />
+                    get a better browser neerd
+                </video>
+            </a>
+            <h2>Hello ${user_name}. </h2>
+            <p v-if="about_show_more_info">I am an <a href="/art">artist</a> masquerading as an <a href="/projects">engineer.</a></p>
+            <br><br><br><br>
+            <div v-if="forgettable" >
+                <a href="#" @click="clearData" class="page-footer">forget</a>
+            </div>
+            <p class="dim_text" v-if="main_page_5_seconds">Pages found: ${num_found_pages} / 10</p>
+            <br><br><br>
+            <p class="cookies"><a href="/hidden" class="cookies">This site uses cookies. Fuck you.</a></p>
+            <script src="/static/js/main.js"></script>
 
-<div class="main container-fluid px-0">
-	<div id="carousel" class="carousel slide" data-interval="false">
-		<div class="carousel-inner">
-			<div class="carousel-item art" id="carousel-art">
-				<center>
-					<div class="row">
-						
-						<div class="col-md-10 order-md-1 order-2 middle">
-							<h2>Digital Art   <small>(not photos)</small></h2>
-
-						</div>
-						<div class="col-md-2 order-md-2 order-1">
-							<div class="row align-items-center justify-content-end sidebtn sidebtnRight" onclick="$('#carousel').carousel('next')">
-								<h2>Main</h2>
-								<i class="fas fa-chevron-right"></i>
-							</div>
-							
-						</div>
-					</div>
-					<div class="row mx-1">
-						<div class="col-md-6 col-10 offset-1 offset-md-0">
-							<img src="/static/img/art/plant.jpg" class="img-fluid rounded">
-					
-							<img src="/static/img/art/eye.jpg" class="img-fluid rounded">
-							<p class="d-none d-md-block">I need a really wide picture to put here...</p>
-						</div>
-						<div class="col-md-6 col-10 offset-1 offset-md-0">
-							<img src="/static/img/art/lamp.jpg" class="img-fluid rounded">
-					
-							<img src="/static/img/art/recordplayer.jpg" class="img-fluid rounded">
-						</div>
-					</div>
-					<br>
-					<center><h2><small>pointillism effect w/code</small></h2></center>
-					<div class="row mx-1">
-						<div class="col-md-4 col-10 offset-1">
-							<img src="/static/img/art/fox.jpg" class="img-fluid rounded">
-						</div>
-						<div class="col-md-6 col-10 offset-1 offset-md-0">
-							<img src="/static/img/art/lake.jpg" class="img-fluid rounded">
-						</div>
-					</div>
-					<center><h2>I'll probably add more stuff here later...</h2></center>
-				</center>
-			</div>
-			<div class="carousel-item" id="carousel-main">
-
-				<center>
-					<div class="row" style="height: 100vh;">
-						
-						<div class="col-6 col-md-2 order-1"  onclick="$('#carousel').carousel('prev')">
-							<div class="row align-items-center sidebtn sidebtnLeft">
-								<i class="fas fa-chevron-left"></i>
-								<h2>Art</h2>
-							</div>
-						</div>
-						<div class="col-md-8 order-3 order-md-2 middle">
-							<div class="d-flex align-content-between flex-wrap" style="height: 100%;">
-
-							<div class="align-middle">
-								<video width="200" height="200" autoplay loop muted>
-								<source src="/static/img/v3.mp4" type="video/mp4" />
-								get a better browser neerd
-							</video>
-							<div class="col-xl-10 justify-content-center">
-								<center></center>
-							<h1>Conrad Menchine</h1>
-							<p> blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah</p>
-							</div>
-							</div>
-
-							<div class="col-12 portfolioBtn">
-								<div  id="portfolioScroll" onclick="ps()">
-								<center>
-									<h2 class="">Portfolio</h2>
-									<i class="fas fa-chevron-down"></i>
-								</center>
-							
-							</div>
-							</div>
-								
-							</div>
-							
-						</div>
-
-						<div class="col-6 col-md-2 order-2 order-md-3">
-							<div class="row align-items-center justify-content-end sidebtn sidebtnRight" onclick="$('#carousel').carousel('next')">
-								<h2>Music</h2>
-								<i class="fas fa-chevron-right"></i>
-							</div>
-							
-						</div>
-					</div>
-					<div class="portfolio" id="portfolio">
-						<h2>(I write code)</h2>
-						<section class="groupr">
-							<div class="row align-items-center">
-								<div class="col-lg-6">
-									<center>
-										<img src="/static/img/groupr.png" class="img-fluid">
-									</center>
-									
-								</div>
-								<div class="col-lg-4 offset-lg-1 textbox">
-									<p>Groupr is a web application that is designed to help shy students find groups in large college classes. It presents a tinder-like interface, allowing users to choose which indivuals they'd like to work with, and then creates the most compatable groups. It was created for the 2019 CruzHacks hackathon and also presented at the Santa Cruz New Tech Meetup the following month.</p>
-									<center>
-										<a href="https://github.com/CruzHacks2019Groupr/groupr"><i class="fab fa-github"></i></a>
-										<a href="https://groupr.pythonanywhere.com/" style="border: none;"><i class="fas fa-globe"></i></a>
-
-									</center>
-									
-								</div>
-							</div>
-						</section>
-						<section class="lk">
-							<div class="row align-items-center">
-								
-								<div class="col-lg-5 offset-lg-1 textbox order-2 order-lg-1">
-									<p>lk is a text-based game that I made after watching Bandersnatch.
-									It's frustratingly difficult and exists mostly to mess with the player. It's still in a pretty early stage.
-									<br><br>
-										Lk is still in progress, and is intentionally written as weirdly as possible. It runs by holding a JSON object full of code, and hot-swapping functions from that object into its own codebase.
-									</p>
-									<center>
-										<a href="https://github.com/cowratt/lk"><i class="fab fa-github"></i></a>
-										<span class="padded"></span>
-										<a href="https://menchine.com/lk"><i class="fas fa-globe"></i></a>
-									</center>
-								</div>
-								<div class="col-lg-4 offset-lg-1 order-1 order-lg-2">
-									<center>
-										<img src="/static/img//lk.png" class="img-fluid">
-									</center>
-									
-								</div>
-							</div>
-						</section>
-						<section class="foodBank">
-							<div class="row align-items-center">
-								<div class="col-lg-6">
-									<center>
-										<img src="/static/img/foodfinder.png" class="img-fluid">
-									</center>
-									
-								</div>
-								<div class="col-lg-4 offset-lg-1 textbox">
-									<p>The Second Harvest FoodFinder was a project that I worked on in order to assist the local Second Harvest Food Bank nonprofit. The website allows members of the community to see when which of the 50+ food distribution sites are open at any given time, with a map. It pulls from a google calendar that can be easily mantained by members of the nonprofit.</p>
-									<center>
-										<a href="https://github.com/cowratt/foodfinder"><i class="fab fa-github"></i></a>
-										<a href="https://foodfinder.pythonanywhere.com/" style="border: none;"><i class="fas fa-globe"></i></a>
-
-									</center>
-									
-								</div>
-							</div>
-						</section>
-						</section>
-					</div>
-				</center>
-			</div>
-			<div class="carousel-item music" id="carousel-music">
-				<center>
-					<div class="row">
-						<div class="col-6 col-md-2"  onclick="$('#carousel').carousel('prev')">
-							<div class="row align-items-center sidebtn sidebtnLeft">
-								<i class="fas fa-chevron-left"></i>
-								<h2>Main</h2>
-							</div>
-						</div>
-						<div class="col-md-10 middle">
-							<div class="container-fluid">
-								<div class="row">
-									<div class="col-xl-4 col-lg-5 col-md-6">
-										<center style="max-width: 50vw;">										
-											<img src="/static/img/colors.jpg" class="img-fluid">	
-										</center>
-									</div>
-									<div class="col-xl-8 col-lg-7 col-md-6">
-										<br><br>
-										<h1>New EP: Colors</h1>		
-										<p>Some wacky tunes about the future</p>
-										<br><br>
-										<a href="https://open.spotify.com/album/50Yt4958ZumKKGFh52nkPb"><i class="fab fa-spotify"></i></a>	
-										<a href="https://soundcloud.com/conrad-menchine/sets/colors"><i class="fab fa-soundcloud"></i></a>
-										<br><br><br>
-										<p>It's free on SoundCloud and Spotify. Also on Google Play, Apple Music, etc...
-											<br>
-										Hit me up if you want a free download. I'm not trying to make money off of my friends</p>
-									</div>
-								</div>
-								
-							</div>
-						</div>
-					</div>
-							<br><br><br><br>
-							<h2>Other Stuff</h2>
-							<p>There are some other individual tracks that I've released on <a href="">my SoundCloud </a>. <br> I have a few other projects in progress... stay tuned</p>
-					<div class="row">
-						<div class="col-lg-6">
-							<p>How to make a Fretless bass</p>
-							<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ZujKJipNVyg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-						</div>
-						<div class="col-lg-6">
-							<p>How to play a B7 chord - Don't try this at home.</p>
-							<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/T94jY53EbCk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-						</div>
-					</div>
-				</center>
-			</div>
-		</div>
-	</div>
-	<div>
-		
-	</div>
-</div>
-
-<div>
-    
-</div>
-
-</div>
-</body>
-</html>
+                
+            </div>
+            <script src="/static/js/main.js"></script>
+        </div>
+    </body>
+    </html>
