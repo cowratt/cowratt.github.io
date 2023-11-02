@@ -1,0 +1,10 @@
+body{
+    background-color: #111;
+    color:#0f0;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+img{
+    max-height: 400px;
+    filter: grayscale(100%);
+}

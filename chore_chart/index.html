@@ -1,0 +1,136 @@
+<html>
+    <!-- <script src="https://unpkg.com/petite-vue" defer init></script> -->
+    <head>
+        <title>Chore Chart</title>
+        <link rel="stylesheet" href="chores.css">
+    </head>
+    <body>
+        <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+        <script type="module">
+            import { createApp } from 'https://unpkg.com/petite-vue?module'
+          
+            var app = createApp({
+              // exposed to all expressions
+              chores: [
+                {
+                    "sentence": "SCRUB THE DECKS!!!!",
+                    "daily": "Run the dishwasher if it's loaded",
+                    "weekly": "Clean up the back deck and backyard"
+                },
+                {
+                    "sentence": "Polish The Throne",
+                    "daily": "Unload the drying rack and the dishwasher if it's clean. CLOSE the washer to reset the light once it's empty.",
+                    "weekly": "Clean the shared bathroom"
+                },
+                {
+                    "sentence": "Banished to a remote island",
+                    "daily": "Wipe the island free of crumbs, weird broccoli bits, etc",
+                    "weekly": "Deep clean (like with a sponge) the counters, island, sink, and stove"
+                },
+                {
+                    "sentence": "MOP COP",
+                    "daily": "Generally clean up in ways that are not covered by other chores. You are a deputized Kitchen Officer this week. If someone is not serving their sentence, write them a ticket (privately).",
+                    "weekly": "Sweep/Vacuum and Mop kitchen and living room"
+                },
+                {
+                    "sentence": "Galley Goon",
+                    "daily": "Put away stray dishes/beer cans, etc.",
+                    "weekly": "Scour the kitchen for belongings. Figure out who they belong to and return them. Replace the tablecloth and empty rotting fruit from the fruit basket"
+                },
+                {
+                    "sentence": "Trash Troll",
+                    "daily": "Take out the trash and recycling if they're full",
+                    "weekly": "Bring out the bins on Tuesday evening"
+                }
+              ],
+              people: [
+                {
+                    "name": "Anna Marie",
+                    "alias": "The Scotts-woman"
+                },
+                {
+                    "name": "Conrad",
+                    "alias": "MR ZONE"
+                },
+                {
+                    "name": "Emelia",
+                    "alias": "The Mushroom Marauder"
+                },
+                {
+                    "name": "Estelle",
+                    "alias": "BELL$IE MONEY"
+                },
+                {
+                    "name": "Michael",
+                    "alias": "MJ Diesel"
+                },
+                {
+                    "name": "Sean",
+                    "alias": "Seen Bean"
+                }
+              ],
+              count: 0,
+              chore: 0,
+              offset: 0, //used to rotate chores
+              
+              // getters
+              get name(){
+                return this.people[this.count].name
+              },
+              get alias(){
+                return this.people[this.count].alias
+              },
+              get sentence(){
+                return this.chores[this.chore].sentence
+              },
+              get daily(){
+                return this.chores[this.chore].daily
+              },
+              get weekly(){
+                return this.chores[this.chore].weekly
+              },
+              get image(){
+                return "img/" + this.people[this.count].name + ".jpg"
+              },
+              reset_chore_date(){
+                var oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
+                var ChoresStart = new Date("October 30, 2023, 1:00");
+                var today = Date.now();
+                console.log(ChoresStart)
+                console.log(today)
+                
+                this.offset = Math.floor((Math.abs((today - ChoresStart) / oneDay)) / 7) % this.people.length;
+                console.log(this.offset)
+                this.chore_date = Date()
+              },
+              // methods
+              increment() {
+                this.reset_chore_date()
+                this.count = (this.count + 1) % this.people.length
+                this.chore = (this.count + this.offset) % this.people.length 
+                this.chore_date = Date()
+              },
+              get load() {
+                console.log("mounted")
+                
+                //poached directly from the Firmware Team
+                this.increment()
+                setInterval(this.increment, 10000)
+
+            },
+            }).mount('#app')
+          </script>
+          
+          <!-- v-scope value can be omitted -->
+          <div id="app" @click="increment">
+            <h1>Chores for {{ chore_date }}</h1>
+            <img :src="image">
+            <h1>Name: {{ name }}</h1>
+            <h2>Alias: {{ alias }}</h2>
+            <h2>Sentence: {{ sentence }}</h2>
+            <h2>Daily Task: {{daily}}</h2>
+            <h2>Weekly Task: {{ weekly }}</h2>
+          </div>
+
+    </body>
+</html>
