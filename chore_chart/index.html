@@ -96,19 +96,15 @@
                 var oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
                 var ChoresStart = new Date("October 30, 2023, 1:00");
                 var today = Date.now();
-                console.log(ChoresStart)
-                console.log(today)
                 
                 this.offset = Math.floor((Math.abs((today - ChoresStart) / oneDay)) / 7) % this.people.length;
-                console.log(this.offset)
-                this.chore_date = Date()
+                this.chore_date = String(Date()).split("(")[0]
               },
               // methods
               increment() {
                 this.reset_chore_date()
                 this.count = (this.count + 1) % this.people.length
                 this.chore = (this.count + this.offset) % this.people.length 
-                this.chore_date = Date()
               },
               get load() {
                 console.log("mounted")
@@ -125,11 +121,13 @@
           <div id="app" @click="increment">
             <h1>Chores for {{ chore_date }}</h1>
             <img :src="image">
+            <div style="max-width: 1000px; margin: 0 auto;">
+              <h2>Alias: {{ alias }}</h2>
+              <h2>Sentence: {{ sentence }}</h2>
+              <h2 style="max-width: 1000px;">Daily Task: {{daily}}</h2>
+              <h2>Weekly Task: {{ weekly }}</h2>
+            </span>
             <h1>Name: {{ name }}</h1>
-            <h2>Alias: {{ alias }}</h2>
-            <h2>Sentence: {{ sentence }}</h2>
-            <h2>Daily Task: {{daily}}</h2>
-            <h2>Weekly Task: {{ weekly }}</h2>
           </div>
 
     </body>
