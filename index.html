@@ -1,43 +1,19 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title> Menchine: Home</title>
-        <script src="/static/js/vue.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+        <title>Menchine</title>
         <link rel="stylesheet" href="/static/css/main.css">
-        <script>
-    setTimeout(()=>{app.main_page_5_seconds = true;},5000)
-</script>
     </head>
-
     <body>
         
-        <div id="app" class="main">
-            <div v-if="temp_forgotten">
-                <p>forgotten</p>
-            </div>
-            <div v-else class="wrapper">
-                
-<div class="spacer-100px"></div>
-            <a href="/about">
+        <div class="main">
+           
+        <div class="spacer-100px"></div>
+            <a>
                 <video width="200" height="200" autoplay loop muted>
                     <source src="/static/img/v3.mp4" type="video/mp4" />
-                    get a better browser neerd
                 </video>
             </a>
-            <h2>Hello ${user_name}. </h2>
-            <p v-if="about_show_more_info">I am an <a href="/art">artist</a> masquerading as an <a href="/projects">engineer.</a></p>
-            <br><br><br><br>
-            <div v-if="forgettable" >
-                <a href="#" @click="clearData" class="page-footer">forget</a>
-            </div>
-            <p class="dim_text" v-if="main_page_5_seconds">Pages found: ${num_found_pages} / 10</p>
-            <br><br><br>
-            <p class="cookies"><a href="/hidden" class="cookies">This site uses cookies. See, I told you!</a></p>
-
-                
-            </div>
-            <script src="/static/js/main.js"></script>
         </div>
     </body>
     </html>
