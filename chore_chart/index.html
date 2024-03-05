@@ -13,61 +13,44 @@
               // exposed to all expressions
               chores: [
                 {
-                    "sentence": "SCRUB THE DECKS!!!!",
-                    "daily": "Run the dishwasher if it's loaded",
-                    "weekly": "Clean up the back deck and backyard"
-                },
-                {
-                    "sentence": "Polish The Throne",
-                    "daily": "Unload the drying rack and the dishwasher if it's clean. CLOSE the washer to reset the light once it's empty.",
+                    "sentence": "The Shittiest Job",
+                    "daily": "Start the dishwasher if it looks full. Unload the drying rack and the dishwasher if it's clean. CLOSE the washer to reset the light once it's empty.",
                     "weekly": "Clean the shared bathroom"
                 },
                 {
-                    "sentence": "Banished to a remote island",
+                    "sentence": "Surface Soldier",
                     "daily": "Wipe the island free of crumbs, weird broccoli bits, etc",
-                    "weekly": "Deep clean (like with a sponge) the counters, island, sink, and stove"
+                    "weekly": "Deep clean (like with a sponge) the counters, island, sink, and stove. Replace the tablecloth. Make sure stuff isn't accumulating on the sideboard/couch/etc."
                 },
                 {
-                    "sentence": "MOP COP",
-                    "daily": "Generally clean up in ways that are not covered by other chores. You are a deputized Kitchen Officer this week. If someone is not serving their sentence, write them a ticket (privately).",
-                    "weekly": "Sweep/Vacuum and Mop kitchen and living room"
+                    "sentence": "Floor Chore",
+                    "daily": "No daily chore.",
+                    "weekly": "Sweep/Vacuum AND THEN Mop the kitchen and living room. Also tidy up back deck / backyard."
                 },
                 {
-                    "sentence": "Galley Goon",
-                    "daily": "Put away stray dishes/beer cans, etc.",
-                    "weekly": "Scour the kitchen for belongings. Figure out who they belong to and return them. Replace the tablecloth and empty rotting fruit from the fruit basket"
-                },
-                {
-                    "sentence": "Trash Troll",
+                    "sentence": "Refuse Rummager",
                     "daily": "Take out the trash and recycling if they're full",
                     "weekly": "Bring out the bins on Tuesday evening"
                 }
               ],
               people: [
                 {
-                    "name": "Anna Marie",
-                    "alias": "The Scotts-woman"
-                },
-                {
-                    "name": "Conrad",
-                    "alias": "MR ZONE"
-                },
-                {
-                    "name": "Emelia",
-                    "alias": "The Mushroom Marauder"
-                },
-                {
                     "name": "Estelle",
                     "alias": "BELL$IE MONEY"
                 },
                 {
                     "name": "Michael",
-                    "alias": "MJ Diesel"
+                    "alias": "The Moustached Man of Mystery"
                 },
                 {
-                    "name": "Sean",
-                    "alias": "Seen Bean"
-                }
+                    "name": "Conrad",
+                    "alias": "The Software Shlumper"
+                },
+                {
+                    "name": "Emelia",
+                    "alias": "The Aquatic Alien"
+                },
+
               ],
               count: 0,
               chore: 0,
@@ -122,12 +105,11 @@
             <h1>Chores for {{ chore_date }}</h1>
             <img :src="image">
             <div style="max-width: 1000px; margin: 0 auto;">
-              <h2>Alias: {{ alias }}</h2>
+              <h1>{{ alias }}</h1>
               <h2>Sentence: {{ sentence }}</h2>
               <h2 style="max-width: 1000px;">Daily Task: {{daily}}</h2>
               <h2>Weekly Task: {{ weekly }}</h2>
             </span>
-            <h1>Name: {{ name }}</h1>
           </div>
 
     </body>
