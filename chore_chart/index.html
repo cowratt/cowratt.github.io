@@ -15,22 +15,26 @@
                 {
                     "sentence": "The Shittiest Job",
                     "daily": "Start the dishwasher if it looks full. Unload the drying rack and the dishwasher if it's clean. CLOSE the washer to reset the light once it's empty.",
-                    "weekly": "Clean the shared bathroom"
+                    "weekly": "Clean the shared bathroom",
+                    "short": "Dishwasher and bathroom"
                 },
                 {
                     "sentence": "Surface Soldier",
                     "daily": "Wipe the island free of crumbs, weird broccoli bits, etc",
-                    "weekly": "Deep clean (like with a sponge) the counters, island, sink, and stove. Replace the tablecloth. Make sure stuff isn't accumulating on the sideboard/couch/etc."
+                    "weekly": "Deep clean (like with a sponge) the counters, island, sink, and stove. Replace the tablecloth. Make sure stuff isn't accumulating on the sideboard/couch/etc.",
+                    "short": "Island, counters, and table"
                 },
                 {
                     "sentence": "Floor Chore",
                     "daily": "No daily chore.",
-                    "weekly": "Sweep/Vacuum AND THEN Mop the kitchen and living room. Also tidy up back deck / backyard."
+                    "weekly": "Sweep/Vacuum AND THEN Mop the kitchen and living room. Also tidy up back deck / backyard.",
+                    "short": "Floors and back yard"
                 },
                 {
                     "sentence": "Refuse Rummager",
                     "daily": "Take out the trash and recycling if they're full",
-                    "weekly": "Bring out the bins on Tuesday evening"
+                    "weekly": "Bring out the bins on Tuesday evening",
+                    "short": "Take out trash"
                 }
               ],
               people: [
@@ -84,6 +88,12 @@
                 this.chore_date = String(Date()).split("(")[0]
               },
               // methods
+              get_name(i){
+                return this.people[i % this.people.length]
+              },
+              get_chore(i){
+                return this.chores[(i+this.offset) % this.people.length]
+              },
               increment() {
                 this.reset_chore_date()
                 this.count = (this.count + 1) % this.people.length
@@ -109,8 +119,12 @@
               <h2>Sentence: {{ sentence }}</h2>
               <h2 style="max-width: 1000px;">Daily Task: {{daily}}</h2>
               <h2>Weekly Task: {{ weekly }}</h2>
-            </span>
+            </div>
+            <div class="footer">
+              <p><b><span v-for="i in 4">{{ get_name(i)['name'] }}: {{ get_chore(i)['short'] }} &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span></b></p>
+            </div>
           </div>
+
 
     </body>
 </html>
